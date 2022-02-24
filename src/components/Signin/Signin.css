@@ -1,0 +1,7 @@
+.button {
+	display: flex;
+	position: absolute;
+	left: 60%;
+	background: black;
+
+}

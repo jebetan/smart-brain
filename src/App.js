@@ -16,8 +16,8 @@ import './App.css';
 // })
 
 class App extends Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       input: '',
       imageUrl: '',
@@ -39,6 +39,8 @@ calculateFaceLocation = (data) => {
   bottomRow: height - (clarifaiFace.bottom_row * height)
  }
 }
+
+
 
 displayFaceBox = (box) => {
   this.setState({box: box})
