@@ -5,6 +5,7 @@ export const ParticlesOptions = {
   "autoPlay": true,
   "background": {
     "color": {
+      "value": ""
     },
     "image": "",
     "position": "50% 50%",
@@ -28,13 +29,13 @@ export const ParticlesOptions = {
   },
   "detectRetina": true,
   "duration": 0,
-  "fpsLimit": 30,
+  "fpsLimit": 120,
   "interactivity": {
     "detectsOn": "window",
     "events": {
       "onClick": {
-        "enable": true,
-        "mode": "push"
+        "enable": false,
+        "mode": []
       },
       "onDiv": {
         "selectors": [],
@@ -43,11 +44,11 @@ export const ParticlesOptions = {
         "type": "circle"
       },
       "onHover": {
-        "enable": true,
-        "mode": "repulse",
+        "enable": false,
+        "mode": [],
         "parallax": {
           "enable": false,
-          "force": 60,
+          "force": 2,
           "smooth": 10
         }
       },
@@ -66,11 +67,9 @@ export const ParticlesOptions = {
         "distance": 200
       },
       "bubble": {
-        "distance": 400,
-        "duration": 2,
-        "mix": false,
-        "opacity": 0.8,
-        "size": 40
+        "distance": 200,
+        "duration": 0.4,
+        "mix": false
       },
       "connect": {
         "distance": 80,
@@ -80,7 +79,7 @@ export const ParticlesOptions = {
         "radius": 60
       },
       "grab": {
-        "distance": 400,
+        "distance": 100,
         "links": {
           "blink": false,
           "consent": false,
@@ -183,7 +182,7 @@ export const ParticlesOptions = {
       }
     },
     "color": {
-      "value": "#ffffff",
+      "value": "#fff",
       "animation": {
         "h": {
           "count": 0,
@@ -256,19 +255,19 @@ export const ParticlesOptions = {
     "links": {
       "blink": false,
       "color": {
-        "value": "#ffffff"
+        "value": "#fff"
       },
       "consent": false,
       "distance": 150,
       "enable": true,
       "frequency": 1,
-      "opacity": 0.4,
+      "opacity": 1,
       "shadow": {
         "blur": 5,
         "color": {
-          "value": "#000000"
+          "value": "#00ff00"
         },
-        "enable": true
+        "enable": false
       },
       "triangles": {
         "enable": false,
@@ -286,8 +285,8 @@ export const ParticlesOptions = {
         "distance": 200,
         "enable": false,
         "rotate": {
-          "x": 600,
-          "y": 1200
+          "x": 3000,
+          "y": 3000
         }
       },
       "decay": 0,
@@ -314,11 +313,7 @@ export const ParticlesOptions = {
         "options": {}
       },
       "outModes": {
-        "default": "out",
-        "bottom": "out",
-        "left": "out",
-        "right": "out",
-        "top": "out"
+        "default": "out"
       },
       "random": false,
       "size": false,
@@ -340,27 +335,26 @@ export const ParticlesOptions = {
     },
     "number": {
       "density": {
-        "enable": true,
+        "enable": false,
         "area": 800,
         "factor": 1000
       },
       "limit": 0,
-      "value": 80
+      "value": 100
     },
     "opacity": {
       "random": {
         "enable": false,
         "minimumValue": 0.1
       },
-      "value": 0.5,
+      "value": 1,
       "animation": {
         "count": 0,
         "enable": false,
-        "speed": 1,
+        "speed": 2,
         "sync": false,
         "destroy": "none",
-        "startValue": "random",
-        "minimumValue": 0.1
+        "startValue": "random"
       }
     },
     "orbit": {
@@ -422,14 +416,14 @@ export const ParticlesOptions = {
       "path": false
     },
     "shadow": {
-      "blur": 5,
+      "blur": 0,
       "color": {
         "value": "#000000"
       },
-      "enable": true,
+      "enable": false,
       "offset": {
-        "x": 3,
-        "y": 3
+        "x": 0,
+        "y": 0
       }
     },
     "shape": {
@@ -438,21 +432,17 @@ export const ParticlesOptions = {
     },
     "size": {
       "random": {
-        "enable": true,
+        "enable": false,
         "minimumValue": 1
       },
-      "value": {
-        "min": 1,
-        "max": 5
-      },
+      "value": 1,
       "animation": {
         "count": 0,
         "enable": false,
-        "speed": 40,
+        "speed": 5,
         "sync": false,
         "destroy": "none",
-        "startValue": "random",
-        "minimumValue": 0.1
+        "startValue": "random"
       }
     },
     "stroke": {
