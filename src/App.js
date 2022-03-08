@@ -46,12 +46,6 @@ class App extends Component {
     }})
   }
 
-  // componentDidMount() {
-  //   fetch('http://localhost:5000/')
-  //     .then(response => response.json())
-  //     .then(console.log)
-  // }
-
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
@@ -97,7 +91,7 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(this.state.user, {entries: count}))
             })
-              .catch(console.log)
+              .catch(err => console.log(err))
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
@@ -118,7 +112,8 @@ class App extends Component {
 
   render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
-    const { onRouteChange, onButtonSubmit, onInputChange } = this
+    const { onRouteChange, onButtonSubmit, onInputChange, loadUser } = this;
+    const { name, entries } = this.state.user;
     return (
       <div className="App">
         <Particles className='particles' params={ParticlesOptions} />
@@ -126,7 +121,11 @@ class App extends Component {
         { route === 'home'
         ? <div>
               <Logo />
-              <Rank />
+              <Rank 
+              name={name}
+              entries={entries}
+               />
+              
               <ImageLinkForm 
                 onInputChange={onInputChange}  
                 onButtonSubmit={onButtonSubmit} 
@@ -136,8 +135,8 @@ class App extends Component {
         
         : (
             route === 'signin'
-            ? <Signin onRouteChange={onRouteChange} />
-            : <Register loadUser={ this.loadUser } onRouteChange={onRouteChange} />
+            ? <Signin loadUser={ loadUser } onRouteChange={onRouteChange} />
+            : <Register loadUser={ loadUser } onRouteChange={onRouteChange} />
           )
         }
       </div>

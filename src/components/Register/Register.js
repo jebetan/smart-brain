@@ -17,7 +17,7 @@ onEmailChange = (event) => {
   }
 
 onPasswordChange = (event) => {
-    this.setState({paswword: event.target.value})
+    this.setState({password: event.target.value})
   }
 
 
