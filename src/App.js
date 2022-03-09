@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation/Navigation';
-import Clarifai from 'clarifai';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Logo from './components/Logo/Logo';
@@ -11,14 +10,7 @@ import Particles from "react-tsparticles";
 import { ParticlesOptions } from './Particles';
 import './App.css';
 
-// const app = new Clarifai.App({
-//   apiKey: '929ba1f9eb194f9096feb3936765591a'
-// });
-
-class App extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
+const initialState = {
       input: '',
       imageUrl: '',
       box: {},
@@ -31,10 +23,13 @@ class App extends Component {
         password: '',
         entries: 0,
         joined: ''
-      }
     }
   }
-
+class App extends Component {
+  constructor (props) {
+    super(props);
+    this.state = initialState;
+    }
   loadUser = (data) => {
     this.setState({ user: {
       id: data.id,
@@ -103,7 +98,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === 'signout') {
-      this.setState({isSignedIn: false})
+      this.setState(initialState)
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
     }
